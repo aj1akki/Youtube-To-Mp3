@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
 using System.Text.RegularExpressions;
 using System.Web;
 using YoutubeExplode;
@@ -13,11 +12,9 @@ namespace Youtube_to_mp3_convertor.Controllers
     public class YoutubeController : ControllerBase
     {
         private readonly YoutubeClient _youtube;
-        private readonly IMemoryCache _memoryCache;
-        public YoutubeController(IMemoryCache memoryCache)
+        public YoutubeController()
         {
             _youtube = new YoutubeClient();
-            _memoryCache = memoryCache;
         }
 
         [HttpGet("{link}")]
