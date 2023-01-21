@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using System.Text.RegularExpressions;
 using System.Web;
 using YoutubeExplode;
 using YoutubeExplode.Videos;
@@ -11,10 +13,11 @@ namespace Youtube_to_mp3_convertor.Controllers
     public class YoutubeController : ControllerBase
     {
         private readonly YoutubeClient _youtube;
-
-        public YoutubeController()
+        private readonly IMemoryCache _memoryCache;
+        public YoutubeController(IMemoryCache memoryCache)
         {
             _youtube = new YoutubeClient();
+            _memoryCache = memoryCache;
         }
 
         [HttpGet("{link}")]
@@ -31,14 +34,14 @@ namespace Youtube_to_mp3_convertor.Controllers
 
                 var video = await GetVideoAsync(link);
                 var streamInfo = await GetAudioStreamAsync(link);
-                var filename = GenerateFileName(link, streamInfo);
+                var title = RemoveInvalidFileNameChars(video.Title);
 
-                await DownloadAudioAsync(streamInfo, filename);
+                await DownloadAudioAsync(streamInfo, title);
 
-                var fileBytes = System.IO.File.ReadAllBytes(filename);
-                var result = File(fileBytes, $"audio/{streamInfo.Container}", filename);
+                var fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
+                var result = File(fileBytes, $"audio/{streamInfo.Container}", title);
                 // Delete the file
-                System.IO.File.Delete(filename);
+                System.IO.File.Delete(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
 
                 return result;
             }
@@ -83,16 +86,17 @@ namespace Youtube_to_mp3_convertor.Controllers
             return streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
         }
 
-        private string GenerateFileName(string link, IStreamInfo streamInfo)
-        {
-            var videoId = new Uri(link).Segments.Last();
-            var timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-            return $"{timestamp}_{videoId}.{streamInfo.Container}";
-        }
-
         private async Task DownloadAudioAsync(IStreamInfo streamInfo, string filename)
         {
-            await _youtube.Videos.Streams.DownloadAsync(streamInfo, filename);
+            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "audio",
+                                            $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
+            await _youtube.Videos.Streams.DownloadAsync(streamInfo, filepath);
+        }
+        private string RemoveInvalidFileNameChars(string fileName)
+        {
+            string invalidChars = Regex.Escape(new string(System.IO.Path.GetInvalidFileNameChars()));
+            string invalidRegStr = string.Format("[{0}]+", invalidChars);
+            return Regex.Replace(fileName, invalidRegStr, "_");
         }
     }
 }
