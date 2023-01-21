@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Web;
 using Youtube_to_Mp3_convertor.Helper;
 
 namespace Youtube_to_mp3_convertor.Controllers
@@ -15,20 +14,25 @@ namespace Youtube_to_mp3_convertor.Controllers
             _youtubeHelper = new YoutubeHelper();
         }
 
-        [HttpGet("{link}")]
+        [HttpPost("{link}")]
         public async Task<IActionResult> DownloadVideo(string link)
         {
             try
             {
+                link = Uri.UnescapeDataString(link);
+
                 if (!_youtubeHelper.IsValidLink(link))
                 {
                     return BadRequest("Not a valid YouTube link");
                 }
 
-                link = HttpUtility.UrlDecode(link);
 
                 var video = await _youtubeHelper.GetVideoAsync(link);
                 var streamInfo = await _youtubeHelper.GetAudioStreamAsync(link);
+                if (streamInfo == null)
+                {
+                    return BadRequest("No audio stream available in the video.");
+                }
                 var title = _youtubeHelper.RemoveInvalidFileNameChars(video.Title);
 
                 await _youtubeHelper.DownloadAudioAsync(streamInfo, title);
@@ -47,16 +51,25 @@ namespace Youtube_to_mp3_convertor.Controllers
             }
             catch (YoutubeExplode.Exceptions.VideoRequiresPurchaseException)
             {
-                return NotFound("Video requires purchase");
+                return BadRequest("Video Requires Purchase");
+            }
+            catch (YoutubeExplode.Exceptions.VideoUnplayableException)
+            {
+                return BadRequest("Video Unplayable");
             }
             catch (YoutubeExplode.Exceptions.RequestLimitExceededException)
             {
                 return StatusCode(429, "Too many requests");
+            }
+            catch (YoutubeExplode.Exceptions.YoutubeExplodeException)
+            {
+                return BadRequest("YoutubeExplodeException");
             }
             catch (Exception ex)
             {
                 return StatusCode(500, "Internal server error");
             }
         }
+
     }
 }

@@ -19,8 +19,21 @@ namespace Youtube_to_Mp3_convertor.Helper
                 return false;
             }
 
-            return link.Contains("youtube") || link.Contains("youtu.be");
+            //Regular expression to match youtube link
+            string pattern = @"^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/watch\?v=([\w-]{11})(&.*)?$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(link);
+
+            if (match.Success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
 
         public async Task<Video> GetVideoAsync(string link)
         {
@@ -37,10 +50,32 @@ namespace Youtube_to_Mp3_convertor.Helper
 
         public async Task DownloadAudioAsync(IStreamInfo streamInfo, string filename)
         {
-            var filepath = Path.Combine(Directory.GetCurrentDirectory(), "audio",
-                                            $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
-            await _youtube.Videos.Streams.DownloadAsync(streamInfo, filepath);
+            var directory = Path.Combine(Directory.GetCurrentDirectory(), "audio");
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            var filepath = Path.Combine(directory,
+                                        $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
+
+            try
+            {
+                // check if the video has a audio stream
+                if (streamInfo == null)
+                {
+                    throw new Exception("No audio stream available in the video.");
+                }
+                await _youtube.Videos.Streams.DownloadAsync(streamInfo, filepath);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Youtube explode exception while downloading");
+            }
+
         }
+
 
         public string RemoveInvalidFileNameChars(string fileName)
         {
