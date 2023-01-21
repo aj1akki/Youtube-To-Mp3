@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "U+RJxFTd6E60dT6ZmxBhYBhFuEhPgW1ijm+H5Mhj0e99oYC94ZuZFrrxUK85sfGdLuuNPJnIkiRyDyCUwDIwjA==",
+  "success": true,
+  "projectFilePath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
