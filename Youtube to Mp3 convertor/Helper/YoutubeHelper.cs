@@ -1,8 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Net;
+using System.Text.RegularExpressions;
 using YoutubeExplode;
-using YoutubeExplode.Videos.Streams;
 using YoutubeExplode.Videos;
-using System.Net;
+using YoutubeExplode.Videos.Streams;
 
 namespace Youtube_to_Mp3_convertor.Helper
 {
@@ -10,6 +10,7 @@ namespace Youtube_to_Mp3_convertor.Helper
     {
         private readonly YoutubeClient _youtube;
         private readonly ILogger<YoutubeHelper> _logger;
+        private readonly string[] blacklistedStrings = { "javascript:", "script", "eval", "onload" };
         public YoutubeHelper(ILogger<YoutubeHelper> logger)
         {
             _youtube = new YoutubeClient();
@@ -17,8 +18,7 @@ namespace Youtube_to_Mp3_convertor.Helper
         }
         public bool IsValidLink(string link)
         {
-            int maxYoutubeLength = 70;
-            string[] blacklistedStrings = { "javascript:", "script", "eval", "onload" };
+            const int maxYoutubeLength = 70;
 
             if (link == null || link.Length > maxYoutubeLength)
             {

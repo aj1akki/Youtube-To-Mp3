@@ -78,7 +78,7 @@ namespace Youtube_to_mp3_convertor.Controllers
             {
                 return BadRequest("YoutubeExplodeException");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Internal server error");
             }
