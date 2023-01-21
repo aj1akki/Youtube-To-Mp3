@@ -40,8 +40,16 @@ namespace Youtube_to_mp3_convertor.Controllers
                 var fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
                 var result = File(fileBytes, $"audio/{streamInfo.Container}", title);
 
-                // Delete the file
-                System.IO.File.Delete(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
+                try
+                {
+                    System.IO.File.Delete(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
+                }
+                catch (IOException ex)
+                {
+                    // Return a specific error message to the user
+                    return StatusCode(500, "Error deleting the file, please try again later");
+                }
+
 
                 return result;
             }
