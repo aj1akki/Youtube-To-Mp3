@@ -39,5 +39,3 @@ D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilo
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Sinks.File.dll
-D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\AntiXssLibrary.dll
-D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\HtmlSanitizationLibrary.dll

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "Youtube to Mp3 convertor/1.0.0": {
         "dependencies": {
-          "AntiXSS": "4.3.0",
           "Serilog": "2.12.0",
           "Serilog.Extensions.Logging": "3.1.0",
           "Serilog.Formatting.Compact": "1.1.0",
@@ -30,18 +29,6 @@
           "lib/netstandard2.0/AngleSharp.dll": {
             "assemblyVersion": "0.17.0.0",
             "fileVersion": "0.17.0.0"
-          }
-        }
-      },
-      "AntiXSS/4.3.0": {
-        "runtime": {
-          "lib/net40/AntiXssLibrary.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
-          },
-          "lib/net40/HtmlSanitizationLibrary.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
           }
         }
       },
@@ -218,13 +205,6 @@
       "sha512": "sha512-74haoXINcj4SdMsmiNzk+9VUwIX1U9P61O6AZd5Uao8SGNnJJB8Y/r8VJRc8orn4c7Vk/oURAKSNF9XcSDxbfA==",
       "path": "anglesharp/0.17.0",
       "hashPath": "anglesharp.0.17.0.nupkg.sha512"
-    },
-    "AntiXSS/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NDEKu4wmQ109bbreNetddmufZU6gPDhVKqX+FqGiMylektPOQB+lPTtuZre41tcDLGHG7ju8z0PPZubrv4z9QQ==",
-      "path": "antixss/4.3.0",
-      "hashPath": "antixss.4.3.0.nupkg.sha512"
     },
     "CliWrap/3.5.0": {
       "type": "package",

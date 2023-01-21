@@ -19,25 +19,6 @@
           }
         }
       },
-      "AntiXSS/4.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/AntiXssLibrary.dll": {
-            "related": ".xml"
-          },
-          "lib/net40/HtmlSanitizationLibrary.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net40/AntiXssLibrary.dll": {
-            "related": ".xml"
-          },
-          "lib/net40/HtmlSanitizationLibrary.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "CliWrap/3.5.0": {
         "type": "package",
         "compile": {
@@ -401,27 +382,6 @@
         "lib/netstandard2.0/AngleSharp.dll",
         "lib/netstandard2.0/AngleSharp.xml",
         "logo.png"
-      ]
-    },
-    "AntiXSS/4.3.0": {
-      "sha512": "NDEKu4wmQ109bbreNetddmufZU6gPDhVKqX+FqGiMylektPOQB+lPTtuZre41tcDLGHG7ju8z0PPZubrv4z9QQ==",
-      "type": "package",
-      "path": "antixss/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "antixss.4.3.0.nupkg.sha512",
-        "antixss.nuspec",
-        "lib/net20/AntiXssLibrary.dll",
-        "lib/net20/AntiXssLibrary.xml",
-        "lib/net35/AntiXssLibrary.dll",
-        "lib/net35/AntiXssLibrary.xml",
-        "lib/net35/HtmlSanitizationLibrary.dll",
-        "lib/net35/HtmlSanitizationLibrary.xml",
-        "lib/net40/AntiXssLibrary.dll",
-        "lib/net40/AntiXssLibrary.xml",
-        "lib/net40/HtmlSanitizationLibrary.dll",
-        "lib/net40/HtmlSanitizationLibrary.xml"
       ]
     },
     "CliWrap/3.5.0": {
@@ -906,7 +866,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AntiXSS >= 4.3.0",
       "Serilog >= 2.12.0",
       "Serilog.Extensions.Logging >= 3.1.0",
       "Serilog.Formatting.Compact >= 1.1.0",
@@ -955,10 +914,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "AntiXSS": {
-            "target": "Package",
-            "version": "[4.3.0, )"
-          },
           "Serilog": {
             "target": "Package",
             "version": "[2.12.0, )"
@@ -1010,17 +965,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'AntiXSS 4.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "AntiXSS",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

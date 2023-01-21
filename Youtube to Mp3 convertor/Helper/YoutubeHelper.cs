@@ -2,8 +2,7 @@
 using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
 using YoutubeExplode.Videos;
-using Microsoft.Security.Application;
-
+using System.Net;
 
 namespace Youtube_to_Mp3_convertor.Helper
 {
@@ -33,7 +32,7 @@ namespace Youtube_to_Mp3_convertor.Helper
                     return false;
                 }
             }
-            link = Sanitizer.GetSafeHtmlFragment(link);
+            link = WebUtility.HtmlEncode(link);
 
             //Regular expression to match youtube link
             string pattern = @"^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/watch\?v=([\w-]{11})(&.*)?$";
