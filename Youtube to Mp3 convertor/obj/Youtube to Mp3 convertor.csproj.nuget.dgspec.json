@@ -43,6 +43,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "YoutubeExplode.Converter": {
+              "target": "Package",
+              "version": "[6.2.5, )"
             }
           },
           "imports": [

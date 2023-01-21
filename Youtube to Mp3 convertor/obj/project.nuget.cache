@@ -1,15 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "U+RJxFTd6E60dT6ZmxBhYBhFuEhPgW1ijm+H5Mhj0e99oYC94ZuZFrrxUK85sfGdLuuNPJnIkiRyDyCUwDIwjA==",
+  "dgSpecHash": "v4FLd36PT7nC1hI1H5gdgG6EseevDvisWW2VD1ZmfaTbLkXDBomIZn6e+d5jv+1Cj/LvOB5qapW3PY4LTDwoIg==",
   "success": true,
   "projectFilePath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ajaak\\.nuget\\packages\\anglesharp\\0.17.0\\anglesharp.0.17.0.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\cliwrap\\3.5.0\\cliwrap.3.5.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
-    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+    "C:\\Users\\ajaak\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\youtubeexplode\\6.2.5\\youtubeexplode.6.2.5.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\youtubeexplode.converter\\6.2.5\\youtubeexplode.converter.6.2.5.nupkg.sha512"
   ],
   "logs": []
 }
