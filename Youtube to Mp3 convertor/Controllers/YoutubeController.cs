@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Web;
 using YoutubeExplode;
+using YoutubeExplode.Videos;
 using YoutubeExplode.Videos.Streams;
 
 namespace Youtube_to_mp3_convertor.Controllers
@@ -9,44 +10,31 @@ namespace Youtube_to_mp3_convertor.Controllers
     [Route("api/youtube")]
     public class YoutubeController : ControllerBase
     {
+        private readonly YoutubeClient _youtube;
+
+        public YoutubeController()
+        {
+            _youtube = new YoutubeClient();
+        }
+
         [HttpGet("{link}")]
         public async Task<IActionResult> DownloadVideo(string link)
         {
             try
             {
-                if (link == null)
+                if (!IsValidLink(link))
                 {
-                    return BadRequest("Link undefined");
-                }
-
-                if (!link.Contains("youtube") && !link.Contains("youtu.be"))
-                {
-                    return BadRequest("Not a YouTube link");
+                    return BadRequest("Not a valid YouTube link");
                 }
 
                 link = HttpUtility.UrlDecode(link);
 
-                var youtube = new YoutubeClient();
+                var video = await GetVideoAsync(link);
+                var streamInfo = await GetAudioStreamAsync(link);
+                var filename = GenerateFileName(link, streamInfo);
 
-                // You can specify either video ID or URL
-                var video = await youtube.Videos.GetAsync(link);
+                await DownloadAudioAsync(streamInfo, filename);
 
-                var title = video.Title;
-
-                var streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
-
-                // ...or highest bitrate audio-only stream
-                var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
-
-                // Generate a unique file name
-                var videoId = new Uri(link).Segments.Last();
-                var timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-                string filename = $"{timestamp}_{videoId}.{streamInfo.Container}";
-
-                // Download the stream to a file
-                await youtube.Videos.Streams.DownloadAsync(streamInfo, filename);
-
-                // Return the audio file as a response to the client
                 var fileBytes = System.IO.File.ReadAllBytes(filename);
                 var result = File(fileBytes, $"audio/{streamInfo.Container}", filename);
                 // Delete the file
@@ -71,6 +59,40 @@ namespace Youtube_to_mp3_convertor.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-    }
 
+        private bool IsValidLink(string link)
+        {
+            if (link == null)
+            {
+                return false;
+            }
+
+            return link.Contains("youtube") || link.Contains("youtu.be");
+        }
+
+        private async Task<Video> GetVideoAsync(string link)
+        {
+            return await _youtube.Videos.GetAsync(link);
+        }
+
+        private async Task<IStreamInfo> GetAudioStreamAsync(string link)
+        {
+            var streamManifest = await _youtube.Videos.Streams.GetManifestAsync(link);
+
+            // ...or highest bitrate audio-only stream
+            return streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
+        }
+
+        private string GenerateFileName(string link, IStreamInfo streamInfo)
+        {
+            var videoId = new Uri(link).Segments.Last();
+            var timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            return $"{timestamp}_{videoId}.{streamInfo.Container}";
+        }
+
+        private async Task DownloadAudioAsync(IStreamInfo streamInfo, string filename)
+        {
+            await _youtube.Videos.Streams.DownloadAsync(streamInfo, filename);
+        }
+    }
 }

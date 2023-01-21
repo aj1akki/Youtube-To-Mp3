@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Youtube to Mp3 convertor.props" />
+</Project>
