@@ -25,3 +25,83 @@
 2023-01-21 15:48:49.396 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 2100.5284ms
 2023-01-21 15:48:49.398 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
 2023-01-21 15:48:49.401 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0 - 200 3839478 audio/webm 2155.4600ms
+2023-01-21 15:57:49.197 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-21 15:57:49.240 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-21 15:57:49.250 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-21 15:57:49.252 +05:30 [INF] Hosting environment: Development
+2023-01-21 15:57:49.254 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-21 15:57:49.697 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-21 15:57:49.969 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 276.8612ms
+2023-01-21 15:57:49.982 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-21 15:57:49.988 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 6.1414ms
+2023-01-21 15:57:49.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-21 15:57:50.016 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.8370ms
+2023-01-21 15:57:50.106 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-21 15:57:50.192 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.6932ms
+2023-01-21 15:58:12.522 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0
+2023-01-21 15:58:12.530 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 15:58:12.559 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-21 15:58:12.590 +05:30 [INF] Log - DownloadVideo request: https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:58:28.330 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:58:29.545 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:58:29.782 +05:30 [INF] Log - DownloadVideo request: streamInfo:Audio-only (webm) video:Video (Shauq | Qala | Tripti Dimri, Babil Khan | Amit Trivedi, Varun Grover | Swanand, Shahid, Sireesha)
+2023-01-21 15:58:29.791 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 15:58:51.090 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 15:58:51.101 +05:30 [INF] Log - DownloadVideo request - File delete successfull
+2023-01-21 15:58:51.108 +05:30 [INF] Executing FileContentResult, sending file with download name 'Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha' ...
+2023-01-21 15:58:51.192 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 38628.1868ms
+2023-01-21 15:58:51.194 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 15:58:51.195 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0 - 200 3839478 audio/webm 38672.5417ms
+2023-01-21 16:06:38.528 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-21 16:06:38.602 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-21 16:06:38.620 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-21 16:06:38.622 +05:30 [INF] Hosting environment: Development
+2023-01-21 16:06:38.625 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-21 16:06:38.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-21 16:06:39.293 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 381.7702ms
+2023-01-21 16:06:39.309 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-21 16:06:39.316 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-21 16:06:39.317 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 8.3092ms
+2023-01-21 16:06:39.335 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.3211ms
+2023-01-21 16:06:39.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-21 16:06:39.502 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.1555ms
+2023-01-21 16:06:49.768 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0
+2023-01-21 16:06:49.777 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 16:06:49.801 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-21 16:06:49.833 +05:30 [INF] Log - DownloadVideo request: https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 16:06:59.847 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 16:07:00.833 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 16:07:22.130 +05:30 [INF] Log - DownloadVideo request: streamInfo:Audio-only (webm) video:Video (Shauq | Qala | Tripti Dimri, Babil Khan | Amit Trivedi, Varun Grover | Swanand, Shahid, Sireesha)
+2023-01-21 16:07:22.140 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 16:07:43.568 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 16:07:43.580 +05:30 [INF] Log - DownloadVideo request - File delete successfull
+2023-01-21 16:07:43.587 +05:30 [INF] Executing FileContentResult, sending file with download name 'Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha' ...
+2023-01-21 16:07:43.670 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 53863.2635ms
+2023-01-21 16:07:43.671 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 16:07:43.672 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0 - 200 3839478 audio/webm 53904.1633ms
+2023-01-21 16:18:40.019 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-21 16:18:40.068 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-21 16:18:40.077 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-21 16:18:40.079 +05:30 [INF] Hosting environment: Development
+2023-01-21 16:18:40.080 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-21 16:18:40.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-21 16:18:41.053 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 281.4576ms
+2023-01-21 16:18:41.064 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-21 16:18:41.069 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 5.3540ms
+2023-01-21 16:18:41.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-21 16:18:41.099 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.5664ms
+2023-01-21 16:18:41.200 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-21 16:18:41.277 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 76.9592ms
+2023-01-21 16:19:01.010 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=ZmcBC9-wAXM&list=RD-lcd1ixHqjE&index=8 - 0
+2023-01-21 16:19:01.020 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 16:19:01.051 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-21 16:19:01.189 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=ZmcBC9-wAXM&list=RD-lcd1ixHqjE&index=8
+2023-01-21 16:19:02.355 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=ZmcBC9-wAXM&list=RD-lcd1ixHqjE&index=8
+2023-01-21 16:19:02.728 +05:30 [INF] Log - DownloadVideo request - GetVideoAsync & GetAudioStreamAsync successfull  streamInfo:Audio-only (mp4) video:Video (Qaafirana | Kedarnath | Sushant Rajput | Sara Ali Khan | Arijit Singh & Nikhita | Amit Trivedi)
+2023-01-21 16:19:02.738 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (mp4) Filename:Qaafirana _ Kedarnath _ Sushant Rajput _ Sara Ali Khan _ Arijit Singh & Nikhita _ Amit Trivedi
+2023-01-21 16:19:03.109 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (mp4) Filename:Qaafirana _ Kedarnath _ Sushant Rajput _ Sara Ali Khan _ Arijit Singh & Nikhita _ Amit Trivedi
+2023-01-21 16:19:03.124 +05:30 [INF] Log - DownloadVideo request - File delete successfully
+2023-01-21 16:19:03.134 +05:30 [INF] Executing FileContentResult, sending file with download name 'Qaafirana _ Kedarnath _ Sushant Rajput _ Sara Ali Khan _ Arijit Singh & Nikhita _ Amit Trivedi' ...
+2023-01-21 16:19:03.227 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 2169.1806ms
+2023-01-21 16:19:03.229 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 16:19:03.230 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=ZmcBC9-wAXM&list=RD-lcd1ixHqjE&index=8 - 0 - 200 6071328 audio/mp4 2219.6223ms

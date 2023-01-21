@@ -2,6 +2,8 @@
 using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
 using YoutubeExplode.Videos;
+using Microsoft.Security.Application;
+
 
 namespace Youtube_to_Mp3_convertor.Helper
 {
@@ -16,10 +18,22 @@ namespace Youtube_to_Mp3_convertor.Helper
         }
         public bool IsValidLink(string link)
         {
-            if (link == null)
+            int maxYoutubeLength = 70;
+            string[] blacklistedStrings = { "javascript:", "script", "eval", "onload" };
+
+            if (link == null || link.Length > maxYoutubeLength)
             {
                 return false;
             }
+
+            foreach (string s in blacklistedStrings)
+            {
+                if (link.Contains(s))
+                {
+                    return false;
+                }
+            }
+            link = Sanitizer.GetSafeHtmlFragment(link);
 
             //Regular expression to match youtube link
             string pattern = @"^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/watch\?v=([\w-]{11})(&.*)?$";
@@ -64,7 +78,7 @@ namespace Youtube_to_Mp3_convertor.Helper
                 Directory.CreateDirectory(directory);
             }
 
-            var filepath = Path.Combine(directory,$"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
+            var filepath = Path.Combine(directory, $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
 
             try
             {
@@ -79,12 +93,11 @@ namespace Youtube_to_Mp3_convertor.Helper
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Log - DownloadAudioAsync exception: StreamInfo:{0} Filename:{1}", streamInfo, filename);
+                _logger.LogInformation("Log - DownloadAudioAsync failed: StreamInfo:{0} Filename:{1}", streamInfo, filename);
                 throw new Exception("Youtube explode exception while downloading");
             }
 
         }
-
 
         public string RemoveInvalidFileNameChars(string fileName)
         {

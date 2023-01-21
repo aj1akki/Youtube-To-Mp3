@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OaicBt/17a4qIPJwNm2hdDk5FAMeEFxqGgto7dlCz9ENbsUa/mn/YYQlVAlgXg/Daqz9fNqSbMKAe71NKbiU4g==",
+  "dgSpecHash": "zycoo6MJhTRxgzp7L3HfMtKHED2hyWicxccjtlpwZvnk0W9WbwdBJeXH/3mAdfhJ7tubJBOhD+EHNQCmqCzLfA==",
   "success": true,
   "projectFilePath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajaak\\.nuget\\packages\\anglesharp\\0.17.0\\anglesharp.0.17.0.nupkg.sha512",
+    "C:\\Users\\ajaak\\.nuget\\packages\\antixss\\4.3.0\\antixss.4.3.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\cliwrap\\3.5.0\\cliwrap.3.5.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
@@ -29,5 +30,16 @@
     "C:\\Users\\ajaak\\.nuget\\packages\\youtubeexplode\\6.2.5\\youtubeexplode.6.2.5.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\youtubeexplode.converter\\6.2.5\\youtubeexplode.converter.6.2.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AntiXSS 4.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AntiXSS",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -21,8 +21,6 @@ namespace Youtube_to_mp3_convertor.Controllers
         {
             try
             {
-                _logger.LogInformation("Log - DownloadVideo request: {link}", link);
-
                 link = Uri.UnescapeDataString(link);
 
                 if (!_youtubeHelper.IsValidLink(link))
@@ -33,7 +31,7 @@ namespace Youtube_to_mp3_convertor.Controllers
 
                 var video = await _youtubeHelper.GetVideoAsync(link);
                 var streamInfo = await _youtubeHelper.GetAudioStreamAsync(link);
-                _logger.LogInformation("Log - DownloadVideo request: streamInfo:{0} video:{1}", streamInfo,video);
+                _logger.LogInformation("Log - DownloadVideo request - GetVideoAsync & GetAudioStreamAsync successfull  streamInfo:{0} video:{1}", streamInfo, video);
 
                 if (streamInfo == null)
                 {
@@ -49,52 +47,39 @@ namespace Youtube_to_mp3_convertor.Controllers
                 try
                 {
                     System.IO.File.Delete(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
-                    _logger.LogInformation("Log - DownloadVideo request - File delete successfull");
+                    _logger.LogInformation("Log - DownloadVideo request - File delete successfully");
                 }
                 catch (IOException ex)
                 {
-                    _logger.LogInformation("Log - DownloadVideo request - File delete failed");
+                    _logger.LogInformation("Log - DownloadVideo request - File delete failed:", Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
                     // Return a specific error message to the user
                     return StatusCode(500, "Error deleting the file, please try again later");
                 }
-
 
                 return result;
             }
             catch (YoutubeExplode.Exceptions.VideoUnavailableException)
             {
-                _logger.LogInformation("Log - DownloadVideo request - VideoUnavailableException");
-
                 return BadRequest("Video unavailable");
             }
             catch (YoutubeExplode.Exceptions.VideoRequiresPurchaseException)
             {
-                _logger.LogInformation("Log - DownloadVideo request - VideoRequiresPurchaseException");
-
                 return BadRequest("Video Requires Purchase");
             }
             catch (YoutubeExplode.Exceptions.VideoUnplayableException)
             {
-                _logger.LogInformation("Log - DownloadVideo request - VideoUnplayableException");
-
                 return BadRequest("Video Unplayable");
             }
             catch (YoutubeExplode.Exceptions.RequestLimitExceededException)
             {
-                _logger.LogInformation("Log - DownloadVideo request - RequestLimitExceededException");
-
                 return StatusCode(429, "Too many requests");
             }
             catch (YoutubeExplode.Exceptions.YoutubeExplodeException)
             {
-                _logger.LogInformation("Log - DownloadVideo request - YoutubeExplodeException");
-
                 return BadRequest("YoutubeExplodeException");
             }
             catch (Exception ex)
             {
-                _logger.LogInformation("Log - DownloadVideo request - Server Error");
-
                 return StatusCode(500, "Internal server error");
             }
         }
