@@ -9,9 +9,9 @@ namespace Youtube_to_mp3_convertor.Controllers
     {
         private readonly YoutubeHelper _youtubeHelper;
 
-        public YoutubeController()
+        public YoutubeController(YoutubeHelper youtubeHelper)
         {
-            _youtubeHelper = new YoutubeHelper();
+            _youtubeHelper = youtubeHelper;
         }
 
         [HttpPost("{link}")]
