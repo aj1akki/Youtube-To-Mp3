@@ -34,3 +34,8 @@ D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\obj\Debug\net6.0\refint
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\obj\Debug\net6.0\Youtube to Mp3 convertor.pdb
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\obj\Debug\net6.0\Youtube to Mp3 convertor.genruntimeconfig.cache
 D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\obj\Debug\net6.0\ref\Youtube to Mp3 convertor.dll
+D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.dll
+D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\bin\Debug\net6.0\Serilog.Sinks.File.dll

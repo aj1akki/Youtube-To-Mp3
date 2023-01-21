@@ -8,9 +8,11 @@ namespace Youtube_to_Mp3_convertor.Helper
     public class YoutubeHelper
     {
         private readonly YoutubeClient _youtube;
-        public YoutubeHelper()
+        private readonly ILogger<YoutubeHelper> _logger;
+        public YoutubeHelper(ILogger<YoutubeHelper> logger)
         {
             _youtube = new YoutubeClient();
+            _logger = logger;
         }
         public bool IsValidLink(string link)
         {
@@ -37,11 +39,14 @@ namespace Youtube_to_Mp3_convertor.Helper
 
         public async Task<Video> GetVideoAsync(string link)
         {
+            _logger.LogInformation("Log - GetVideoAsync request: Link:{0}", link);
             return await _youtube.Videos.GetAsync(link);
         }
 
         public async Task<IStreamInfo> GetAudioStreamAsync(string link)
         {
+            _logger.LogInformation("Log - GetAudioStreamAsync request: Link:{0}", link);
+
             var streamManifest = await _youtube.Videos.Streams.GetManifestAsync(link);
 
             // ...or highest bitrate audio-only stream
@@ -50,6 +55,8 @@ namespace Youtube_to_Mp3_convertor.Helper
 
         public async Task DownloadAudioAsync(IStreamInfo streamInfo, string filename)
         {
+            _logger.LogInformation("Log - DownloadAudioAsync request: StreamInfo:{0} Filename:{1}", streamInfo, filename);
+
             var directory = Path.Combine(Directory.GetCurrentDirectory(), "audio");
 
             if (!Directory.Exists(directory))
@@ -57,8 +64,7 @@ namespace Youtube_to_Mp3_convertor.Helper
                 Directory.CreateDirectory(directory);
             }
 
-            var filepath = Path.Combine(directory,
-                                        $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
+            var filepath = Path.Combine(directory,$"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
 
             try
             {
@@ -67,10 +73,13 @@ namespace Youtube_to_Mp3_convertor.Helper
                 {
                     throw new Exception("No audio stream available in the video.");
                 }
+
                 await _youtube.Videos.Streams.DownloadAsync(streamInfo, filepath);
+                _logger.LogInformation("Log - DownloadAudioAsync successfull: StreamInfo:{0} Filename:{1}", streamInfo, filename);
             }
             catch (Exception ex)
             {
+                _logger.LogInformation("Log - DownloadAudioAsync exception: StreamInfo:{0} Filename:{1}", streamInfo, filename);
                 throw new Exception("Youtube explode exception while downloading");
             }
 
@@ -79,7 +88,7 @@ namespace Youtube_to_Mp3_convertor.Helper
 
         public string RemoveInvalidFileNameChars(string fileName)
         {
-            string invalidChars = Regex.Escape(new string(System.IO.Path.GetInvalidFileNameChars()));
+            string invalidChars = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
             string invalidRegStr = string.Format("[{0}]+", invalidChars);
             return Regex.Replace(fileName, invalidRegStr, "_");
         }

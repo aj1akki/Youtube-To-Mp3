@@ -1,11 +1,17 @@
+using Serilog;
+using Serilog.Formatting.Compact;
 using Youtube_to_Mp3_convertor.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
+var logger = new LoggerConfiguration()
+    .WriteTo.Console(new CompactJsonFormatter())
+    .WriteTo.File("logs.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
 
 // Add services to the container.
-builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<YoutubeHelper>();
-
+builder.Services.AddLogging(logging => logging.AddSerilog(logger));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

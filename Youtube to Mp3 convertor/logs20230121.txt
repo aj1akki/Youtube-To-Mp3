@@ -1,0 +1,27 @@
+2023-01-21 15:47:28.878 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-21 15:47:28.927 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-21 15:47:28.937 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-21 15:47:28.940 +05:30 [INF] Hosting environment: Development
+2023-01-21 15:47:28.941 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-21 15:47:29.633 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-21 15:47:29.979 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-21 15:47:29.986 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 354.8798ms
+2023-01-21 15:47:29.987 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 8.2863ms
+2023-01-21 15:47:30.012 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-21 15:47:30.038 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.1595ms
+2023-01-21 15:47:30.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-21 15:47:30.254 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 86.2969ms
+2023-01-21 15:48:47.245 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0
+2023-01-21 15:48:47.258 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 15:48:47.290 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-21 15:48:47.314 +05:30 [INF] Log - DownloadVideo request: https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:48:47.320 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:48:48.431 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2
+2023-01-21 15:48:48.775 +05:30 [INF] Log - DownloadVideo request: streamInfo:Audio-only (webm) video:Video (Shauq | Qala | Tripti Dimri, Babil Khan | Amit Trivedi, Varun Grover | Swanand, Shahid, Sireesha)
+2023-01-21 15:48:48.783 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 15:48:49.294 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha
+2023-01-21 15:48:49.305 +05:30 [INF] Log - DownloadVideo request - File delete successfull
+2023-01-21 15:48:49.314 +05:30 [INF] Executing FileContentResult, sending file with download name 'Shauq _ Qala _ Tripti Dimri, Babil Khan _ Amit Trivedi, Varun Grover _ Swanand, Shahid, Sireesha' ...
+2023-01-21 15:48:49.396 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 2100.5284ms
+2023-01-21 15:48:49.398 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-21 15:48:49.401 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=cJZKEklZhdM&list=RD-lcd1ixHqjE&index=2 - 0 - 200 3839478 audio/webm 2155.4600ms
