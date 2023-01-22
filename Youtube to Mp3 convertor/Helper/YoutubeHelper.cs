@@ -93,7 +93,7 @@ namespace Youtube_to_Mp3_convertor.Helper
             }
             catch (Exception)
             {
-                _logger.LogInformation("Log - DownloadAudioAsync failed: StreamInfo:{0} Filename:{1}", streamInfo, filename);
+                _logger.LogError("Log - DownloadAudioAsync failed: StreamInfo:{0} Filename:{1}", streamInfo, filename);
                 throw new Exception("Youtube explode exception while downloading");
             }
         }

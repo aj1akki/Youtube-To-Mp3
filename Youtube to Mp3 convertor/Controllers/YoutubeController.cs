@@ -40,11 +40,11 @@ namespace Youtube_to_mp3_convertor.Controllers
                 }
 
                 var video = await _youtubeHelper.GetVideoAsync(link);
-                var streamInfo = await _youtubeHelper.GetAudioStreamAsync(link);
-                _logger.LogInformation("Log - DownloadVideo request - GetVideoAsync & GetAudioStreamAsync successfull  streamInfo:{0} video:{1}", streamInfo, video);
+                var streamInfo = await _youtubeHelper.GetAudioStreamAsync(link);                
 
                 if (streamInfo == null)
                 {
+                    _logger.LogInformation("Log - DownloadVideo request - No audio stream available in the video", link);
                     return BadRequest("No audio stream available in the video.");
                 }
                 var title = _youtubeHelper.RemoveInvalidFileNameChars(video.Title);
@@ -59,11 +59,10 @@ namespace Youtube_to_mp3_convertor.Controllers
                     // Using Path.GetFullPath method to get the absolute path
                     var filepath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
                     System.IO.File.Delete(filepath);
-                    _logger.LogInformation("Log - DownloadVideo request - File delete successfully");
                 }
                 catch (IOException)
                 {
-                    _logger.LogInformation("Log - DownloadVideo request - File delete failed:", Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
+                    _logger.LogError("Log - DownloadVideo request - File delete failed:", Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
                     // Return a specific error message to the user
                     return StatusCode(500, "Error deleting the file, please try again later");
                 }
