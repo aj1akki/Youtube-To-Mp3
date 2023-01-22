@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using System.Text;
+using System.Text.Json;
 using Youtube_to_Mp3_convertor.Helper;
 
 namespace Youtube_to_mp3_convertor.Controllers
@@ -10,13 +13,12 @@ namespace Youtube_to_mp3_convertor.Controllers
     {
         private readonly YoutubeHelper _youtubeHelper;
         private readonly ILogger<YoutubeController> _logger;
-        private readonly IMemoryCache _memoryCache;
-
-        public YoutubeController(YoutubeHelper youtubeHelper, ILogger<YoutubeController> logger, IMemoryCache memoryCache)
+        private readonly IDistributedCache _distributedCache;
+        public YoutubeController(YoutubeHelper youtubeHelper, ILogger<YoutubeController> logger, IDistributedCache distributedCache)
         {
             _youtubeHelper = youtubeHelper;
             _logger = logger;
-            _memoryCache = memoryCache;
+            _distributedCache = distributedCache;
         }
 
         [HttpPost("{link}")]
@@ -94,23 +96,27 @@ namespace Youtube_to_mp3_convertor.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-
         private bool CheckRateLimit(string clientIp)
         {
-            // Define the rate limit (e.g. 10 requests per minute)
-            var limit = 100;
-            var period = 60;
+            var cacheKey = $"rate-limit:{clientIp}";
+            var currentTime = DateTimeOffset.UtcNow;
 
-            if (!_memoryCache.TryGetValue(clientIp, out int count))
+            var timestampBytes = _distributedCache.Get(cacheKey);
+            if (timestampBytes != null)
             {
-                count = 0;
-                _memoryCache.Set(clientIp, count, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(period)));
+                var timestamp = DateTimeOffset.Parse(Encoding.UTF8.GetString(timestampBytes));
+                if (currentTime - timestamp < TimeSpan.FromSeconds(30))
+                {
+                    return true;
+                }
+                _distributedCache.Remove(cacheKey);
             }
-            if (count >= limit)
+            var currentTimeBytes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(currentTime));
+
+            _distributedCache.Set(cacheKey, currentTimeBytes, new DistributedCacheEntryOptions
             {
-                return true;
-            }
-            _memoryCache.Set(clientIp, ++count);
+                AbsoluteExpiration = currentTime.AddSeconds(30)
+            });
             return false;
         }
 

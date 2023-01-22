@@ -103,3 +103,41 @@
 2023-01-22 17:58:42.790 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=Pkh8UtuejGw&list=RDgv9hrQzU0cA&index=17 - 0
 2023-01-22 17:58:42.790 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
 2023-01-22 17:58:42.791 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-22 18:19:45.651 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-22 18:19:45.696 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-22 18:19:45.706 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-22 18:19:45.708 +05:30 [INF] Hosting environment: Development
+2023-01-22 18:19:45.710 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-22 18:19:46.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-22 18:19:46.674 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-22 18:19:46.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 278.4951ms
+2023-01-22 18:19:46.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 5.0729ms
+2023-01-22 18:19:46.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-22 18:19:46.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.2541ms
+2023-01-22 18:19:46.812 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-22 18:19:46.894 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.8008ms
+2023-01-22 18:19:57.559 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=Pkh8UtuejGw&list=RDgv9hrQzU0cA&index=17 - 0
+2023-01-22 18:19:57.567 +05:30 [INF] CORS policy execution successful.
+2023-01-22 18:19:57.573 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-22 18:19:57.603 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-22 18:20:04.070 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=Pkh8UtuejGw&list=RDgv9hrQzU0cA&index=17
+2023-01-22 18:20:05.227 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=Pkh8UtuejGw&list=RDgv9hrQzU0cA&index=17
+2023-01-22 18:20:05.512 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Shawn Mendes, Camila Cabello - Señorita (Official Music Video)
+2023-01-22 18:20:05.717 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Shawn Mendes, Camila Cabello - Señorita (Official Music Video)
+2023-01-22 18:20:05.731 +05:30 [INF] Executing FileContentResult, sending file with download name 'Shawn Mendes, Camila Cabello - Señorita (Official Music Video)' ...
+2023-01-22 18:20:05.770 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 8160.7503ms
+2023-01-22 18:20:05.771 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-22 18:20:05.772 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=Pkh8UtuejGw&list=RDgv9hrQzU0cA&index=17 - 0 - 200 3444884 audio/webm 8212.8319ms
+2023-01-22 18:39:52.150 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-22 18:39:52.191 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-22 18:39:52.200 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-22 18:39:52.202 +05:30 [INF] Hosting environment: Development
+2023-01-22 18:39:52.204 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-22 18:39:52.686 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-22 18:39:53.120 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 436.0409ms
+2023-01-22 18:39:53.123 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-22 18:39:53.135 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 12.2621ms
+2023-01-22 18:39:53.143 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-22 18:39:53.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 56.9782ms
+2023-01-22 18:39:53.331 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-22 18:39:53.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.8803ms
