@@ -10,6 +10,7 @@ var logger = new LoggerConfiguration()
 
 
 // Add services to the container.
+builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<YoutubeHelper>();
 builder.Services.AddLogging(logging => logging.AddSerilog(logger));
 

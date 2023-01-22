@@ -18,7 +18,7 @@ namespace Youtube_to_Mp3_convertor.Helper
         }
         public bool IsValidLink(string link)
         {
-            const int maxYoutubeLength = 70;
+            const int maxYoutubeLength = 100;
 
             if (link == null || link.Length > maxYoutubeLength)
             {
@@ -77,7 +77,8 @@ namespace Youtube_to_Mp3_convertor.Helper
                 Directory.CreateDirectory(directory);
             }
 
-            var filepath = Path.Combine(directory, $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}");
+            // Using Path.GetFullPath method to get the absolute path
+            var filepath = Path.GetFullPath(Path.Combine(directory, $"{RemoveInvalidFileNameChars(filename)}.{streamInfo.Container}"));
 
             try
             {
@@ -90,13 +91,13 @@ namespace Youtube_to_Mp3_convertor.Helper
                 await _youtube.Videos.Streams.DownloadAsync(streamInfo, filepath);
                 _logger.LogInformation("Log - DownloadAudioAsync successfull: StreamInfo:{0} Filename:{1}", streamInfo, filename);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _logger.LogInformation("Log - DownloadAudioAsync failed: StreamInfo:{0} Filename:{1}", streamInfo, filename);
                 throw new Exception("Youtube explode exception while downloading");
             }
-
         }
+
 
         public string RemoveInvalidFileNameChars(string fileName)
         {
