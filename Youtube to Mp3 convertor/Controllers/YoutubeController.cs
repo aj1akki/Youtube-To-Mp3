@@ -49,10 +49,19 @@ namespace Youtube_to_mp3_convertor.Controllers
                 }
                 var title = _youtubeHelper.RemoveInvalidFileNameChars(video.Title);
 
-                await _youtubeHelper.DownloadAudioAsync(streamInfo, title);
+                var cacheKey = $"{title}.{streamInfo.Container}";
+                var cacheExpiration = TimeSpan.FromMinutes(30);
+                var audioFile = _memoryCache.Get<byte[]>(cacheKey);
 
-                var fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
-                var result = File(fileBytes, $"audio/{streamInfo.Container}", title);
+                if (audioFile == null)
+                {
+                    await _youtubeHelper.DownloadAudioAsync(streamInfo, title);
+
+                    var fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Directory.GetCurrentDirectory(), "audio", $"{title}.{streamInfo.Container}"));
+                    _memoryCache.Set(cacheKey, fileBytes, cacheExpiration);
+                    audioFile = fileBytes;
+                }
+                var result = File(audioFile, $"audio/{streamInfo.Container}", title);
 
                 try
                 {

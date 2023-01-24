@@ -1,0 +1,87 @@
+2023-01-23 10:30:24.394 +05:30 [INF] Now listening on: https://localhost:7074
+2023-01-23 10:30:24.482 +05:30 [INF] Now listening on: http://localhost:5163
+2023-01-23 10:30:24.506 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-23 10:30:24.508 +05:30 [INF] Hosting environment: Development
+2023-01-23 10:30:24.510 +05:30 [INF] Content root path: D:\Github Repo's\Youtube-To-Mp3\Youtube to Mp3 convertor\
+2023-01-23 10:30:25.070 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/index.html - -
+2023-01-23 10:30:25.535 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/index.html - - - 200 - text/html;charset=utf-8 467.7231ms
+2023-01-23 10:30:25.593 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - -
+2023-01-23 10:30:25.596 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/_vs/browserLink - -
+2023-01-23 10:30:25.599 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_framework/aspnetcore-browser-refresh.js - - - 200 12018 application/javascript;+charset=utf-8 5.6893ms
+2023-01-23 10:30:26.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 448.3918ms
+2023-01-23 10:30:26.171 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - -
+2023-01-23 10:30:26.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7074/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.1055ms
+2023-01-23 10:31:20.841 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0
+2023-01-23 10:31:20.859 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:31:20.870 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:31:20.921 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:31:34.510 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:31:35.999 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:31:57.897 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-01-23 10:31:57.908 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 36978.8966ms
+2023-01-23 10:31:57.910 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:31:57.911 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0 - 500 - text/plain;+charset=utf-8 37069.9893ms
+2023-01-23 10:32:15.741 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0
+2023-01-23 10:32:15.751 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:32:15.756 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:32:15.757 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:32:15.765 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:32:16.728 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:32:38.048 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-01-23 10:32:38.050 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 22290.868ms
+2023-01-23 10:32:38.050 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:32:38.051 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0 - 500 - text/plain;+charset=utf-8 22310.0913ms
+2023-01-23 10:32:53.753 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0
+2023-01-23 10:32:53.767 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:32:53.768 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:32:53.769 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:32:53.777 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:33:00.637 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4
+2023-01-23 10:33:22.683 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-01-23 10:33:22.684 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 28913.9029ms
+2023-01-23 10:33:22.685 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:33:22.686 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=fge78Gv0f1E&list=RDgv9hrQzU0cA&index=4 - 0 - 500 - text/plain;+charset=utf-8 28932.6976ms
+2023-01-23 10:34:02.750 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2 - 0
+2023-01-23 10:34:02.753 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:34:02.754 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:34:02.756 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:34:02.770 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2
+2023-01-23 10:34:07.132 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2
+2023-01-23 10:34:44.647 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Enrique Iglesias - Hero (Official Music Video)
+2023-01-23 10:34:54.967 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Enrique Iglesias - Hero (Official Music Video)
+2023-01-23 10:35:33.620 +05:30 [INF] Executing FileContentResult, sending file with download name 'Enrique Iglesias - Hero (Official Music Video)' ...
+2023-01-23 10:35:33.745 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 90988.0964ms
+2023-01-23 10:35:33.746 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:35:33.746 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2 - 0 - 200 4642867 audio/webm 90996.3772ms
+2023-01-23 10:37:08.426 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2 - 0
+2023-01-23 10:37:08.429 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:37:08.431 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:37:08.431 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:37:08.448 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2
+2023-01-23 10:37:09.356 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2
+2023-01-23 10:38:38.328 +05:30 [INF] Executing FileContentResult, sending file with download name 'Enrique Iglesias - Hero (Official Music Video)' ...
+2023-01-23 10:38:38.438 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 90000.7409ms
+2023-01-23 10:38:38.439 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:38:38.440 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=koJlIGDImiU&list=RDgv9hrQzU0cA&index=2 - 0 - 200 4642867 audio/webm 90013.7790ms
+2023-01-23 10:38:57.913 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7 - 0
+2023-01-23 10:38:57.914 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:38:57.915 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:38:57.915 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:38:57.923 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7
+2023-01-23 10:38:58.614 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7
+2023-01-23 10:41:46.354 +05:30 [INF] Log - DownloadAudioAsync request: StreamInfo:Audio-only (webm) Filename:Why Not Me_
+2023-01-23 10:41:46.696 +05:30 [INF] Log - DownloadAudioAsync successfull: StreamInfo:Audio-only (webm) Filename:Why Not Me_
+2023-01-23 10:41:46.714 +05:30 [INF] Executing FileContentResult, sending file with download name 'Why Not Me_' ...
+2023-01-23 10:41:46.778 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 168861.4499ms
+2023-01-23 10:41:46.778 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:41:46.779 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7 - 0 - 200 3826627 audio/webm 168865.9363ms
+2023-01-23 10:42:20.354 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7 - 0
+2023-01-23 10:42:20.356 +05:30 [INF] CORS policy execution successful.
+2023-01-23 10:42:20.356 +05:30 [INF] Executing endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:42:20.357 +05:30 [INF] Route matched with {action = "DownloadVideo", controller = "Youtube"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadVideo(System.String) on controller Youtube_to_mp3_convertor.Controllers.YoutubeController (Youtube to Mp3 convertor).
+2023-01-23 10:42:20.364 +05:30 [INF] Log - GetVideoAsync request: Link:https://www.youtube.com/watch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7
+2023-01-23 10:42:21.174 +05:30 [INF] Log - GetAudioStreamAsync request: Link:https://www.youtube.com/watch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7
+2023-01-23 10:43:42.398 +05:30 [INF] Executing FileContentResult, sending file with download name 'Why Not Me_' ...
+2023-01-23 10:43:42.465 +05:30 [INF] Executed action Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor) in 82106.9758ms
+2023-01-23 10:43:42.466 +05:30 [INF] Executed endpoint 'Youtube_to_mp3_convertor.Controllers.YoutubeController.DownloadVideo (Youtube to Mp3 convertor)'
+2023-01-23 10:43:42.466 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7074/api/youtube/https:%2F%2Fwww.youtube.com%2Fwatch?v=dDVcO3seBgk&list=RDgv9hrQzU0cA&index=7 - 0 - 200 3826627 audio/webm 82111.8808ms
