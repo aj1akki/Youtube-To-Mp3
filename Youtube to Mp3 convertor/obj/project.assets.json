@@ -881,11 +881,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
+      "projectUniqueName": "D:\\Github Repositories\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
       "projectName": "Youtube to Mp3 convertor",
-      "projectPath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
+      "projectPath": "D:\\Github Repositories\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
       "packagesPath": "C:\\Users\\ajaak\\.nuget\\packages\\",
-      "outputPath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\obj\\",
+      "outputPath": "D:\\Github Repositories\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ajaak\\AppData\\Roaming\\NuGet\\NuGet.Config",

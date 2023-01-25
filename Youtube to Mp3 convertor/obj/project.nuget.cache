@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OaicBt/17a4qIPJwNm2hdDk5FAMeEFxqGgto7dlCz9ENbsUa/mn/YYQlVAlgXg/Daqz9fNqSbMKAe71NKbiU4g==",
+  "dgSpecHash": "1wzMGdF+4xKtWSLsXgY6RAM3++m5DKd5rfbhFELV9SOtXawQCR/a+v9FpQw2VA8nv7LOwj5aB/9Ktd+bYqQ3fw==",
   "success": true,
-  "projectFilePath": "D:\\Github Repo's\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
+  "projectFilePath": "D:\\Github Repositories\\Youtube-To-Mp3\\Youtube to Mp3 convertor\\Youtube to Mp3 convertor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajaak\\.nuget\\packages\\anglesharp\\0.17.0\\anglesharp.0.17.0.nupkg.sha512",
     "C:\\Users\\ajaak\\.nuget\\packages\\cliwrap\\3.5.0\\cliwrap.3.5.0.nupkg.sha512",
